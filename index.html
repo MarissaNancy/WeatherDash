@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="style.css" />
-    
-      <title>Weather Dashboard!</title>
-</head>
-<body>
-    <header>
-        <h1 class="topTitle bg-light text-dark text-center"> Weather Dashboard</h1>
-    </header>
 
-    <div class="contain-fluid d-flex">
-        <div class="searchinput bg-light col-md-4 col-sm-12" style="padding-left: 10px;">
-            <h4 class="text-dark">Search for a city:</h4>
-            <input id="userinput" type="text">
-            <button class="btn" id="inputSearch" style="margin-bottom: 10px;">
-                <i class="fa fa-search"></i>
-            </button>
-            <div class="card" style="width: 20rem;">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Weather Dashboard!</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="topTitle bg-light text-dark text-center"> Weather Dashboard</h1>
+  </header>
+
+  <div class="contain-fluid d-flex">
+    <div class="searchinput bg-light col-md-4 col-sm-12" style="padding-left: 10px;">
+      <h4 class="text-dark">Search for a city:</h4>
+      <input id="userinput" type="text">
+      <button class="btn" id="inputSearch" style="margin-bottom: 10px;">
+        <i class="fa fa-search"></i>
+      </button>
+      
+      <div id="previousSearch" class="carcont col-md-8 col-sm-12 border" style="height: fit-content;">there
+      </div>
+      <div id="card" class="card-body">
+        <h3 id="cardTitle"></h3>
+        <div id="cardBody" class=></div>
+      </div>
+      <div class="row" style="padding: 0; margin: 0; margin-top: 10px">
+        <div class="col-md-8">
+          <div class="d-flex justify-content-between" id="daycontain">
+            <div id="day" class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
             </div>
-            <div id="cardcontent" class="carcont col-md-8 col-sm-12 border" style="height: fit-content;">
+            <!-- <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
             </div>
-            <div id="card" class="card-body">
-                <div id = "cardTitle" class="d-inline-flex justify-content-sm-between"></div>
-                <div id="cardBod" class=></div>
+            <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
             </div>
-            <div class="row" style="padding: 0; margin: 0; margin-top: 10px">
-                <div class="col-md-8">
-                  <div class="d-flex justify-content-between" id="daycontain">
-                    <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
-                    </div>
-                    <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
-                    </div>
-                    <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
-                    </div>
-                    <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
-                    </div>
-                    <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
-                    </div>
+            <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
             </div>
+            <div class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 10rem; height: 10rem">
+            </div> -->
+          </div>
         </div>
-    </div>
+      </div>
+      <script src="script.js"></script>
 </body>
+
 </html>
