@@ -38,6 +38,22 @@ function searchCity() {
 
 searchBttn.addEventListener('click', searchCity)
 
+//for getting city Object which is langituted and longitude to get uv indx
+// let lat = response.city.coord.lat;
+// let lon = response.city.coord.lon;
+//let query uv 
+// let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey 
+// fetch(UVQueryURL)
+// .then(function(response){
+//     let UVIndex = document.createElement("span");
+//     UVIndex.setAttribute("class","badge badge-danger");
+//     UVIndex.innerHTML = res.dt[0].value;
+//     currentUVEl.innerHTML = "UV Index: ";
+//     currentUVEl.append(UVIndex);
+//add to html so i can append?
+// });
+//something like this not exactly this//
+
 
 //api call to get 5 day fourcast
 //function to get forecast this is where i want to put the rest of the cards
