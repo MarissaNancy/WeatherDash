@@ -3,57 +3,91 @@
 
 var APIkey = "592fe29192cc287a00ec4f4aa68923ec"
 var searchBttn = document.querySelector('#inputSearch');
-var userInput = document.querySelector('#userinput');
 var cityTitle = document.querySelector('#cardTitle');
-var weatherInfo = document.querySelector('#cardBody');
+var weatherTemp = document.querySelector('#temp');
 var dayOne = document.querySelector('#day');
 
 
-//something like this 
-// function getCityname(event) {
-//   event.preventDefault();
-//   var userCity = userInput.value
-  
-//   console.log(userInput);
-// } look at rt app and see what we did for this function
+//  var city = userInput.value;
+// var URL = "https://api.openweathermap.org/data/2.5/forecast?q="+ city +"&units=imperial&appid=" + APIkey
 //this is the function for the main card
+//put cityname in this function and remove var city
 function searchCity() {
-  var city = userInput.value;
-  var URL = "https://api.openweathermap.org/data/2.5/forecast?q="+ city +"&units=imperial&appid=" + APIkey
 
-  console.log(city)
-  fetch(URL)
-  .then(function(res){
-    return res.json();
-  }).then(function(results){
-    console.log(results);
-    cityTitle.textContent = results.city.name + ' ' + results.list[0].dt_txt
-    weatherInfo.textContent = 'temp: C ' + results.list[0].main.temp
-    weatherInfo.textContent = 'wind: ' + results.list[0].wind.speed + ' mph'
-    weatherInfo.textContent = 'humidity : ' + results.list[0].main.humidity
-   
-    //add to html cause i did not do that yet
-  })
+  var userInput = document.querySelector('#userinput').value;
+
+  let URL = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&units=imperial&appid=" + APIkey
+
+  fetch(URL, {
+  }).then(function (response) {
+    return response.json()
+    
+  }).then(function (data) {
+    console.log(data)
+    var cityname = data.city.name;
+    var lat = data.city.coord.lat;
+    //console.log lat and lon
+    var lon = data.city.coord.lon;
+
+    let UVQueryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIkey
+
+    fetch(UVQueryURL).then(function (response) {
+      return response.json();
+      //consolelog 
+
+    }).then(function(data){
+      console.log(data);
+      //here where you would render 
+      cityTitle.textContent = cityname;
+      weatherTemp.textContent = "Tempeture:  ℉ "+data.current.temp;
+
+      for (let i = 0; i < array.length; i++) {
+       if(i = 6){break;}
+        
+      }
+    });
+  });
+
 }
 
+// console.log(userCity)
+// fetch(URL)
+// .then(function(res){
+//   return res.json();
+// }).then(function(results){
+//   console.log(results);
+//   cityTitle.textContent = results.city.name + ' ' + results.list[0].dt_txt
+//   //have to create div first?
+//   //var weatherInfo = document.querySelector('#cardBody') 
+//   //var cardBodyInfo = document.createElement('div');
+//   //cardBodyInfo.classlist.add('card?')
+//   //weatherInfo.append(cardBodyInfo)
+//   weatherInfo.textContent = 'temp: C ' + results.list[0].main.temp
+//   weatherInfo.textContent = 'wind: ' + results.list[0].wind.speed + ' mph'
+//   weatherInfo.textContent = 'humidity : ' + results.list[0].main.humidity
+
+//add to html cause i did not do that yet
+//   })
+// }
+
+//for button change to getcityname so i can pass onto func searchcity and forcast
 searchBttn.addEventListener('click', searchCity)
 
-//for getting city Object which is langituted and longitude to get uv indx
-// let lat = response.city.coord.lat;
-// let lon = response.city.coord.lon;
-//let query uv 
-// let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey 
-// fetch(UVQueryURL)
-// .then(function(response){
-//     let UVIndex = document.createElement("span");
-//     UVIndex.setAttribute("class","badge badge-danger");
-//     UVIndex.innerHTML = res.dt[0].value;
-//     currentUVEl.innerHTML = "UV Index: ";
-//     currentUVEl.append(UVIndex);
-//add to html so i can append?
-// });
-//something like this not exactly this//
+// fetch(url, {
+//   }).then(function(response) {  
+//    response.json()
+    //.then(function(data) {  
+    // let lat = results.city.coord.lat;
+//    let lon = results.city.coord.lon;
+//    let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey  
+  //fetch(UVQueryURL).then(function(response) {
+//        return response.json();
+//   
+//        
+//  });
+//    }); 
 
+//for getting city Object which is langituted and longitude to get uv indx
 
 //api call to get 5 day fourcast
 //function to get forecast this is where i want to put the rest of the cards
