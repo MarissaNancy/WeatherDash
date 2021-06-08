@@ -5,13 +5,15 @@ var APIkey = "592fe29192cc287a00ec4f4aa68923ec"
 var searchBttn = document.querySelector('#inputSearch');
 var cityTitle = document.querySelector('#cardTitle');
 var weatherTemp = document.querySelector('#temp');
+var weatherHumid = document.querySelector('#humidity');
+var weatherWind = document.querySelector("#wind");
+var weatherUV = document.querySelector("#uvindex")
 var dayOne = document.querySelector('#day');
 
 
-//  var city = userInput.value;
 // var URL = "https://api.openweathermap.org/data/2.5/forecast?q="+ city +"&units=imperial&appid=" + APIkey
 //this is the function for the main card
-//put cityname in this function and remove var city
+
 function searchCity() {
 
   var userInput = document.querySelector('#userinput').value;
@@ -40,6 +42,10 @@ function searchCity() {
       //here where you would render 
       cityTitle.textContent = cityname;
       weatherTemp.textContent = "Tempeture:  ℉ "+data.current.temp;
+      weatherHumid.textContent = "Humidity: " + data.current.humidity;
+      weatherWind.textContent = "Wind Speed: " + data.current.wind_speed;
+      weatherUV.textContent = "UV Index: " + data.current.uvi;
+
 
       for (let i = 0; i < array.length; i++) {
        if(i = 6){break;}
@@ -70,49 +76,9 @@ function searchCity() {
 //   })
 // }
 
-//for button change to getcityname so i can pass onto func searchcity and forcast
 searchBttn.addEventListener('click', searchCity)
 
-// fetch(url, {
-//   }).then(function(response) {  
-//    response.json()
-    //.then(function(data) {  
-    // let lat = results.city.coord.lat;
-//    let lon = results.city.coord.lon;
-//    let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey  
-  //fetch(UVQueryURL).then(function(response) {
-//        return response.json();
-//   
-//        
-//  });
-//    }); 
 
-//for getting city Object which is langituted and longitude to get uv indx
-
-//api call to get 5 day fourcast
-//function to get forecast this is where i want to put the rest of the cards
-// function forecast() {
-//   var city = userInput.value;
-//   var URL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIkey
-
-//   console.log(city)
-//   fetch(URL)
-//    .then(function(res){
-//      return res.json();
-//    }).then(function(results){
-//      console.log(results);
-//    })
-// }
-
-// searchBttn.addEventListener('click', forecast)
-
-
-//make variables for card containers to append one 
-
-//function to print results
-// function printRes(){
-//   //needs parameterd and can det link.setattribute or inner.html 
-// }
 
 //add to clear innerHTML add to cards in case user wants to search for another city
 
