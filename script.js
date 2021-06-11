@@ -1,5 +1,4 @@
 //api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
-//think what the user has to do in order to start with the app
 
 //global variables set
 var APIkey = "592fe29192cc287a00ec4f4aa68923ec"

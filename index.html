@@ -9,16 +9,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css" />
 
+  <!--Title of app-->
   <title>Weather Dashboard!</title>
 </head>
-
-<!---->
 <body>
+  <!--Header for app-->
   <header>
     <h1 class="topTitle bg-light text-dark text-center"> Weather Dashboard</h1>
     <p id="mainp">Search for a city to get weather info!</p>
   </header>
-
+  <!--Contains button to search for city-->
   <div class="contain-fluid d-flex">
     <div class="searchinput bg-light col-md-4 col-sm-12" style="padding-left: 10px;">
       <h4 class="text-dark">Search for a city:</h4>
@@ -28,6 +28,7 @@
       </button>
     </div>
     <div>
+      <!--Card for the main temp-->
       <div id="card" class="card-body">
         <h3 id="cardTitle"></h3>
         <div id="cardBody">
@@ -53,10 +54,13 @@
         </div>
         </div>
       </div>
+      <!--This is where the card styling starts-->
       <div class="row" style="padding: 0; margin: 0; margin-top: 10px">
         <div class="col-md-8">
           <div class="d-flex justify-content-between" id="daycontain">
+            <!--Gives cards styling and size-->
             <div id="day" class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 12rem; height: 12rem">
+              <!--First card container for day 1-->
               <div>
                 <p id="temp1"></p>
               </div>
@@ -70,6 +74,7 @@
                 <p id="uv1"></p>
               </div>
             </div>
+            <!--Card container for day 2-->
             <div id="day2" class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 12rem; height: 12rem">
               <div>
                 <p id="temp2"></p>
@@ -84,6 +89,7 @@
                 <p id="uv2"></p>
               </div>
             </div>
+            <!--Card container for day 3-->
             <div id="day3" class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 12rem; height: 12rem">
               <div>
                 <p id="temp3"></p>
@@ -98,6 +104,7 @@
                 <p id="uv3"></p>
               </div>
             </div>
+            <!--Card container for day 4-->
             <div id="day4" class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 12rem; height: 12rem">
               <div>
                 <p id="temp4"></p>
@@ -112,6 +119,7 @@
                 <p id="uv4"></p>
               </div>
             </div>
+            <!--Card container for day 5-->
             <div id="day5" class="card text-white bg-primary mb-3 col-2 mr-1" style="min-width: 12rem; height: 12rem">
               <div>
                 <p id="temp5"></p>

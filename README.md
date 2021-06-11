@@ -22,6 +22,6 @@ Then they are presented with current and future conditions for that city
 ## Mockup
 The following image shows the web application's appearance and functionality:
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+(![The weather app includes a search option](./Assets/app.png))
 
-The link to my deployed page is __
+The link to my deployed page is https://marissanancy.github.io/WeatherDash/
